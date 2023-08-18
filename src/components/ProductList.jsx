@@ -5,6 +5,9 @@ import seed from "../seed.js";
 let products = seed;
 
 class ProductList extends React.Component {
+  handleProductUpVote(productId) {
+    console.log(productId + " was upvoted.");
+  }
   render() {
     products = products.sort((a, b) => b.votes - a.votes);
     const productComponents = products.map((product) => (
@@ -17,6 +20,7 @@ class ProductList extends React.Component {
         votes={product.votes}
         submitterAvatarUrl={product.submitterAvatarUrl}
         productImageUrl={product.productImageUrl}
+        onVote={this.handleProductUpVote}
       />
     ));
     return <div className="ui unstackable items">{productComponents}</div>;
