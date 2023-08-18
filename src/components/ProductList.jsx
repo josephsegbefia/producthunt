@@ -2,14 +2,35 @@ import React from "react";
 import Product from "./Product";
 import seed from "../seed.js";
 
-let products = seed;
+let productsArray = seed;
 
 class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      products: []
+    };
+
+    this.handleProductUpVote = this.handleProductUpVote.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ products: productsArray });
+  }
   handleProductUpVote(productId) {
-    console.log(productId + " was upvoted.");
+    const products = this.state.products;
+    products.forEach((product) => {
+      if (product.id === productId) {
+        product.votes = product.votes + 1;
+      }
+    });
+    this.setState({
+      products: products
+    });
   }
   render() {
-    products = products.sort((a, b) => b.votes - a.votes);
+    const products = this.state.products.sort((a, b) => b.votes - a.votes);
     const productComponents = products.map((product) => (
       <Product
         key={"product-" + product.id}
