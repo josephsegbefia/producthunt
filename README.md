@@ -14,6 +14,7 @@ This is a simplified clone of the Product Hunt website built using React. It sho
     - [Methods](#methods-1)
     - [Render](#render-1)
   - [Getting Started](#getting-started)
+  - [Demo](#demo)
 
 ## ProductList Component
 
@@ -57,5 +58,9 @@ To run the Product Hunt Clone app:
 6. Run your React development server.
 
 That's it! You now have a basic Product Hunt Clone app that allows users to upvote their favorite products.
+
+## Demo
+
+View App Here: https://jproducthuntclone.netlify.app/
 
 Feel free to expand upon this foundation by adding additional features, refining the design, and incorporating more interactivity to make the app your own. Happy coding!
